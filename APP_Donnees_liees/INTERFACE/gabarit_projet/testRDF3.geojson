@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "testRDF3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -8005912.793002780526876, 5703679.810826551169157 ], [ -7967009.189111915417016, 5668516.938079038634896 ], [ -8033594.203463587909937, 5665337.316607189364731 ], [ -8005912.793002780526876, 5703679.810826551169157 ] ] ] } }
+]
+}

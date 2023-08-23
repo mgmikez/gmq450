@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+  <meta charset="latin-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabarti</title>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+  
+  <link rel="stylesheet" href="style/perso.css">
+  <script src="script/initCarte.js"></script>
+  <script src="script/initOutils.js"></script>
+  <script src="script/initSelectionCouche.js"></script>
+
+  
+  
+  
+  <script>
+$(document).ready(function () {
+
+		
+	creationCarte();
+	creationBarreOutils();
+	creationSelectionCouche();
+	
+	//Création de l'accordéon
+	$( "#accordion" ).accordion({
+		collapsible:	true,
+		heightStyle:	false,	
+		active:			false
+	});
+	
+	//Bouton qui cache l'accordéon
+	$("#hideacco").click(function(){
+			if ($("#accordion").is(":hidden") == false) {
+				$("#accordion").hide(600);
+			}
+			else{
+				$("#accordion").show(600);
+			}
+	});
+});
+
+  </script>
+</head>
+<body>
+
+	<!--Création de la carte-->
+	<div id="map"></div>
+     
+
+	<!--Création de l'accordéon-->
+	<div id="accordion" style="width:220px;">
+	  <h3>Couches</h3>
+	  <div id="selectionCouche">
+		<span><font size = "4" color = "green"><b>Fonds de carte</b></font></span>
+		<div id="base">
+			<input type="radio" id="osm" name="radio" checked="checked">
+				<label for="osm"><font size="2" color="gray">OSM</font></label>
+			</input></br>
+			<input type="radio" id="mqsat" name="radio">
+				<label for="mqsat"><font size="2" color="gray">Sat</font></label>
+			</input>
+		</div>
+		</br>
+		<span><font size = "4" color = "green"><b>Couches</b></font></span>
+		<div id="overlay">
+			<input type="checkbox" id="urbain" name="checkbox" checked="checked">
+				<label for="urbain"><font size="2" color="gray">Urbain</font></label></br>
+			</input>
+			<input type="checkbox" id="urbainwfs" name="checkbox">
+				<label for="urbainwfs"><font size="2" color="gray">Urbain WFS</font></label></br>
+			</input>
+			<input type="checkbox" id="ParcArmandDuplessis" name="checkbox" checked="checked">
+				<label for="ParcArmandDuplessis"><font size="2" color="gray">Parc Armand Duplessis</font></label>
+			</input>
+		</div>
+	  </div>
+	  <h3>Information</h3>
+	  <div>
+		<div id="infoPanel">
+		Cliquer sur l'élément à interroger
+		</div>
+	  </div>
+	  <h3>Contacts</h3>
+	  <div>
+		<p>
+		Écrire à ...
+		</p>
+	  </div>
+
+	</div>
+	
+	<!--Création de la barre d'outil-->
+	<div id="toolbar" >
+		<button id="extent"><span class="ui-icon extent"></span></button>
+		<button id="pan" autofocus=true><span class="ui-icon pan"></span></button>
+		<button id="zoomin"><span class="ui-icon zoomin"></span></button>
+		<button id="info"><span class="ui-icon info"></span></button>
+	</div>
+
+	<!--bouton qui cache l'accordeon-->
+	<div id="hidemenu"><label for="hideacco" ><a title="Menu"><button type="button" id="hideacco"><img src = "icons/layer.png"></button></a></label></div> 
+	
+	<!--position des coordonnées pour la souris-->
+	<div id="mouse-position" style ="position:absolute;bottom:1px; right:150px;font-weight: bold; font-size: 14; color: red;  "></div>
+
+</body>
+
+
+</html>

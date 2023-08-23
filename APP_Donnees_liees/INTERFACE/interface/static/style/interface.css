@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size : 14px;
+}
+
+.logoGEV {
+    position : absolute;
+    height: 100px;
+    z-index: 10;
+    padding: 15px;
+}
+
+#map{
+    height: 100%;
+    z-index: -1;
+}
+
+#title {
+    position: absolute;
+    text-align : center;
+    z-index: 1000;
+    height: 40px;
+    width: 20%;
+    top: 100px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#parcname {
+    position: absolute;
+    text-align:center;
+    z-index: 1000;
+    height: 40px;
+    width: 20%;
+    top: 145px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+#content1 {
+    position: absolute;
+    z-index: 1000;
+    height: 425px;
+    width: 20%;
+    top: 175px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#content2 {
+    position: absolute;
+    z-index: 1000;
+    height: 425px;
+    width: 20%;
+    top: 175px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#content3 {
+    position: absolute;
+    z-index: 1000;
+    height: 425px;
+    width: 20%;
+    top: 175px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#footer {
+    position: absolute;
+    z-index: 1000;
+    height: 40px;
+    width: 20%;
+    top: 570px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 1px;
+}
+
+.foot-button{
+    height:100%;
+    width:32.4%;
+}
+
+.foot-button:focus{
+    background-color: beige;
+}
+
+#mouse-position{
+	position: absolute;
+    right : 10px;
+    bottom : 30px
+}
+
+#info{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.ol-zoom {
+	left: unset;
+	top: 50px;
+	right: 8px;
+	}
+
+/* TOOLBAR */
+
+#toolbar{
+    position: absolute;
+    right: 50%;
+    bottom: 50px;
+    z-index: 1000;
+    display: inline-block;
+    padding: 10px;
+}
+/* support: IE7 */
+*+html #toolbar {
+    display: inline,
+}
+
+#tool-info{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-info:hover {
+    background-color: #ffffff9c 
+  }
+
+#tool-layers{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-layers:hover {
+    background-color: #ffffff9c 
+  }
+
+#tool-keys{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-keys:hover {
+    background-color: #ffffff9c 
+  }
+
+#tool-about{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-about:hover {
+    background-color: #ffffff9c 
+  }
+
+#tool-hidemenu{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-hidemenu:hover {
+    background-color: #ffffff9c 
+  }
+
+#tool-background{
+    z-index: 500;
+    border-radius: 100%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#tool-background:hover {
+    background-color: #ffffff9c 
+  }
+
+#topo_image{
+    width: 100%;
+}
+
+#parc_image{
+    width: 100%;
+}

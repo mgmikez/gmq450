@@ -1,0 +1,83 @@
+/* remove padding and scrolling from elements that contain an Accordion OR a content-div */
+	.ui-layout-center ,	/* has content-div */
+	.ui-layout-west ,	/* has Accordion */
+	.ui-layout-east ,	/* has content-div ... */
+	.ui-layout-east .ui-layout-content { /* content-div has Accordion */
+		padding: 0;
+		overflow: hidden;
+	}
+
+
+#map {
+            width: 100%; height: 100%; border: 1px solid black;
+			z-index: -1;
+        }
+		
+#toolbar{
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    z-index: 1000;
+	display: inline-block;
+
+  }
+  /* support: IE7 */
+  *+html #toolbar {
+    display: inline;
+  }
+  
+/*
+ * Icone toolbar
+ */
+.extent {background-image:url(../icons/world.png) !important;}
+.zoomin {background-image:url(../icons/zoom_in.png) !important;}
+.pan {background-image:url(../icons/pan.png) !important;}
+.zoomout {background-image:url(../icons/zoom_out.png) !important;}
+.ruler {background-image:url(../icons/ruler.png) !important;}
+.ruler2 {background-image:url(../icons/ruler_square.png) !important;}
+.prev {background-image:url(../icons/navigation_history_active_prev.png) !important;}
+.next {background-image:url(../icons/navigation_history_active_next.png) !important;}
+.info {background-image:url(../icons/info2.png) !important;}
+
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+#selectionCouche{
+	padding: 10px;
+}
+
+#affichageMesure{
+	position:absolute;
+	left:62px;
+	top:35px;
+	z-index:1000;
+}
+
+#accordion {
+	position: absolute;
+	left: 40px;
+	top: 35px;
+	z-index: 500;
+	}
+#accordion .ui-accordion-content{
+		max-height: 60vh;
+	}
+	
+#accordion .ui-accordion-header {
+	margin: 0px;
+	display: block;
+	}
+	
+#hidemenu{
+    position: absolute;
+    top: 5px;
+	left: 45px;
+    z-index: 1000;
+	display: inline-block;
+	}
+	
+
