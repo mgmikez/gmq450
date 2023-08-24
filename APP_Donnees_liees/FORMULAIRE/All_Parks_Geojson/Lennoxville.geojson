@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Aires_am%C3%A9nag%C3%A9es",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "id": 133, "properties": { "ID": 1651, "MUNICIPALITE": "43027", "NOM": "Parc des Vétérans", "TYPE": "Ilot de verdure", "OBJECTID": 133, "SHAPE__Area": 670.578125, "SHAPE__Length": 109.663210201475 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -71.856531575900306, 45.367934059994603 ], [ -71.856535948899094, 45.367978879706698 ], [ -71.856272796419702, 45.367995799190901 ], [ -71.856230111172394, 45.367956119903297 ], [ -71.856171159231906, 45.367877307788604 ], [ -71.856524375004994, 45.367860219130499 ], [ -71.856531575900306, 45.367934059994603 ] ] ] } }
-]
-}

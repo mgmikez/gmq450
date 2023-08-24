@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "Aires_am%C3%A9nag%C3%A9es",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "id": 86, "properties": { "ID": 1601, "MUNICIPALITE": "43027", "NOM": "Promontoire du Bicentenaire", "TYPE": "Parc urbain", "OBJECTID": 86, "SHAPE__Area": 9096.77734375, "SHAPE__Length": 394.00142355960799 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -71.864194567294803, 45.410788449072598 ], [ -71.864202989000603, 45.410915603737699 ], [ -71.863526864815498, 45.4109296201839 ], [ -71.863522324730098, 45.410796477678197 ], [ -71.863500562143997, 45.410158135961503 ], [ -71.863765000112494, 45.410149017516602 ], [ -71.864151327786999, 45.410135695843799 ], [ -71.864194567294803, 45.410788449072598 ] ] ] } }
-]
-}
