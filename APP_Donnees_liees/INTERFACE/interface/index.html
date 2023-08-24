@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIG Historique des parcs de Sherbrooke</title>
+  	<!--JQuery + UI-->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  	
+    <!--OpenLayers-->    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>  
+  	<!--CSS + Scripts-->
+  <link rel="stylesheet" href="static/style/interface.css">
+  <script src="static/script/initCarte.js"></script>
+  <script defer src="static/script/initContent.js"></script>
+  	<!--Fonctions-->
+  <script>
+  $(document).ready(function () {	
+    creationCarte()
+  });
+  </script>
+
+</head>
+<body>
+	<!--Logo-->	
+  <img class="logoGEV" src="static/images/logo_horiz.png" />
+
+	<!--Carte-->
+	<div id="map"></div>
+
+  <!--Toolbar-->
+  <div id="toolbar">
+    <button id="tool-info" title="Informations" onclick="infoMenu()"><img src="static/icons/tool-info.png"></button>
+    <button id="tool-layers" title="Couches" onclick="layersMenu()"><img src="static/icons/tool-layers.png"></button>
+    <button id="tool-keys" title="Legende" onclick="legendMenu()"><img src="static/icons/tool-keys.png"></button>
+    <button id="tool-background" title="Fonds de carte" onclick="baseLayersMenu()"><img src="static/icons/tool-background.png"></button>
+    <button id="tool-about" title="A propos" onclick="helpMenu()"><img src="static/icons/tool-about.png"></button>
+    <button id="tool-hidemenu" title="Afficher/Masquer le menu" onclick="hideMenu()"><img src="static/icons/tool-hidemenu.png"></button>
+  </div> 
+
+  <!--Menu (gestion avec les scripts initMenu et initContent)-->
+  <div id="menu">
+    <div id="title"> Informations </div>
+    <div id="parcname"> Sélectionnez un parc </div>
+    <div id="content1"></div>
+    <div id="content2" hidden></div>
+    <div id="content3" hidden></div>
+    <div id="othercontent" hidden></div>
+    <div id="footer">
+      <button id="topobutton" class="foot-button"> Toponyme </button>
+      <button id="parcbutton" class="foot-button"> Parc </button>
+      <button id="otherbutton" class="foot-button"> Autres infos </button>
+    </div>
+  </div>
+
+  <!--position des coordonnees pour la souris-->
+	<div id="mouse-position"></div>
+
+</body>

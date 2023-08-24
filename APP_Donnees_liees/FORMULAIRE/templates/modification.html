@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <style>
+ 		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table tr {
+            padding: 10px;
+            border: 2px solid #ddd;
+        }
+
+        table td:first-child {
+            width: 20%;
+            font-weight: bold;
+            border-right: 1px solid #ddd;
+            padding: 5px
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 98%;
+        }
+
+        input[type="number"], input[type="date"] {
+            padding: 5px;
+            width: 20%;
+        }
+
+        input[type="submit"] {
+            background-color: #036400;
+            color: #FFF;
+            cursor: pointer;
+            padding: 5px;
+            width: 20%;
+        }
+
+        input[type="submit"]:hover {
+			background-color: #6b9900;
+		}
+
+        label {
+            font-weight: bold;
+        }
+
+    </style>
+    <script>var df= {{ df|tojson }};</script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <div>
+                <img src="{{url_for('static', filename='udslogo.png')}}" height="75"/>
+            </div>
+        </td>
+        <td>
+            <div>
+                <img src="{{url_for('static', filename='geoespacesverts.png')}}" height="75"/>
+            </div>
+        </td>
+        <td>
+            <div>
+                <h1>Formulaire de modification d'un parc</h1>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<form action="/update" method="POST" enctype="multipart/form-data", id="my-form">
+    <h1> Informations sur le parc </h1>
+    <table>
+        <tr>
+            <td><label for="nomParc">Nom du parc</label></td>
+            <td>
+
+              <select id="nomParc" name="nomParc">
+
+                {% for option in options %}
+                  <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+
+              </select>
+                <script>const selectElement = document.getElementById('nomParc');
+                        selectElement.addEventListener('click', (event) => {
+                          const selectedValue = event.target.value;
+
+                          const result = df.filter(row => row['nomParc'] === selectedValue)[0];
+                            console.log(result);
+                            const superficieInput = document.getElementById('superficie');
+                                  superficieInput.value = result['superficie'];
+
+                            const typeInput = document.getElementById('quartier');
+                                  typeInput.value = result['typeParc'];
+                                    if (typeInput.value === "quartier") {
+                                        document.getElementById("quartier").checked = true;
+                                    } else if (typeInput.value === "urbain") {
+                                        document.getElementById("urbain").checked = true;
+                                    } else if (typeInput.value === "ilot") {
+                                        document.getElementById("ilot").checked = true;
+                                    } else if (typeInput.value === "naturel") {
+                                        document.getElementById("naturel").checked = true;
+                                    } else if (typeInput.value === "voisinage") {
+                                        document.getElementById("voisinage").checked = true;
+                                    } else {
+                                        document.getElementById("autre").checked = true;
+                                    }
+
+                            const dateAncienNomInput = document.getElementById('dateCreation');
+                                  dateAncienNomInput.value = result['dateCreation'];
+
+                            const arrondissementInput = document.getElementById('arrondissement');
+                                  arrondissementInput.value = result['arrondissement'];
+
+                            const dateNomActuelInput = document.getElementById('dateOfficialisation');
+                                  dateNomActuelInput.value = result['dateOfficialisation'];
+
+                            const Amenagement_1Input = document.getElementById('Amenagement_1');
+                                  Amenagement_1Input.value = result['Amenagement_1'];
+
+                            const Amenagement_2Input = document.getElementById('Amenagement_2');
+                                  Amenagement_2Input.value = result['Amenagement_2'];
+
+                            const Amenagement_3Input = document.getElementById('Amenagement_3');
+                                  Amenagement_3Input.value = result['Amenagement_3'];
+
+                            const Amenagement_4Input = document.getElementById('Amenagement_4');
+                                  Amenagement_4Input.value = result['Amenagement_4'];
+
+                            const Amenagement_5Input = document.getElementById('Amenagement_5');
+                                  Amenagement_5Input.value = result['Amenagement_5'];
+
+                            const Amenagement_6Input = document.getElementById('Amenagement_6');
+                                  Amenagement_6Input.value = result['Amenagement_6'];
+
+                            const Amenagement_7Input = document.getElementById('Amenagement_7');
+                                  Amenagement_7Input.value = result['Amenagement_7'];
+
+                            const Amenagement_8Input = document.getElementById('Amenagement_8');
+                                  Amenagement_8Input.value = result['Amenagement_8'];
+
+                            const Amenagement_9Input = document.getElementById('Amenagement_9');
+                                  Amenagement_9Input.value = result['Amenagement_9'];
+
+                            const Amenagement_10Input = document.getElementById('Amenagement_10');
+                                  Amenagement_10Input.value = result['Amenagement_10'];
+
+                            const NomInput = document.getElementById('nom');
+                                  NomInput.value = result['nom'];
+
+                            const dateNaissanceInput = document.getElementById('dateNaissance');
+                                  dateNaissanceInput.value = result['dateNaissance'];
+
+                            const dateDecesInput = document.getElementById('dateDeces');
+                                  dateDecesInput.value = result['dateDeces'];
+
+                            const professionInput = document.getElementById('profession');
+                                  professionInput.value = result['profession'];
+
+                            const employeurInput = document.getElementById('employeur');
+                                  employeurInput.value = result['employeur'];
+
+                            const lieuEtudesInput = document.getElementById('lieuEtudes');
+                                  lieuEtudesInput.value = result['lieuEtudes'];
+
+                            const nbreEnfantsInput = document.getElementById('nbreEnfants');
+                                  nbreEnfantsInput.value = result['nbreEnfants'];
+
+                            });
+                </script>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Type de parc</td>
+            <td>
+                <input type="radio" id="quartier" name="typeParc" value="quartier">
+                <label for="quartier">Parc de quartier</label><br>
+                <input type="radio" id="urbain" name="typeParc" value="urbain">
+                <label for="urbain">Parc urbain</label><br>
+                <input type="radio" id="ilot" name="typeParc" value="ilot">
+                <label for="ilot">Îlot de verdure</label><br>
+                <input type="radio" id="naturel" name="typeParc" value="naturel">
+                <label for="naturel">Parc naturel</label><br>
+                <input type="radio" id="voisinage" name="typeParc" value="voisinage">
+                <label for="voisinage">Parc de voisinage</label><br>
+                <input type="radio" id="autre" name="typeParc" value="">
+                <label for="autre">Autre / Pas d'information</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="superficie">Superficie (ha)</label></td>
+            <td><input type="text" id="superficie" name="superficie"></td>
+        </tr>
+        <tr>
+            <td><label for="dateCreation">Date d'ouverture</label></td>
+            <td><input type="date" id="dateCreation" name="dateCreation"></td>
+        </tr>
+        <tr>
+            <td><label for="arrondissement">Arrondissement</label></td>
+            <td><input type="text" id="arrondissement" name="arrondissement"></td>
+        </tr>
+        <tr>
+            <td><label for="dateOfficialisation">Date d'officialisation</label></td>
+            <td><input type="date" id="dateOfficialisation" name="dateOfficialisation"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_1">Aménagements 1</label></td>
+            <td><input type="text" id="Amenagement_1" name="Amenagement_1"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_2">Aménagements 2</label></td>
+            <td><input type="text" id="Amenagement_2" name="Amenagement_2"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_3">Aménagements 3</label></td>
+            <td><input type="text" id="Amenagement_3" name="Amenagement_3"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_4">Aménagements 4</label></td>
+            <td><input type="text" id="Amenagement_4" name="Amenagement_4"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_5">Aménagements 5</label></td>
+            <td><input type="text" id="Amenagement_5" name="Amenagement_5"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_6">Aménagements 6</label></td>
+            <td><input type="text" id="Amenagement_6" name="Amenagement_6"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_7">Aménagements 7</label></td>
+            <td><input type="text" id="Amenagement_7" name="Amenagement_7"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_8">Aménagements 8</label></td>
+            <td><input type="text" id="Amenagement_8" name="Amenagement_8"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_9">Aménagements 9</label></td>
+            <td><input type="text" id="Amenagement_9" name="Amenagement_9"></td>
+        </tr>
+        <tr>
+            <td><label for="Amenagement_10">Aménagements 10</label></td>
+            <td><input type="text" id="Amenagement_10" name="Amenagement_10"></td>
+        </tr>
+        <tr>
+            <td><label for="geometry"> Geometry (JSON)</label></td>
+            <td><input type="file" id="geometry" name="geometry"></td>
+        </tr>
+    </table><br/>
+    <h1> Informations sur la personne liée au parc </h1>
+    <table>
+        <tr>
+            <td><label for="nom">Nom</label></td>
+            <td><input type="text" id="nom" name="nom"></td>
+        </tr>
+        <tr>
+            <td><label for="dateNaissance">Date de naissance</label></td>
+            <td><input type="text" id="dateNaissance" name="dateNaissance"></td>
+        </tr>
+        <tr>
+            <td><label for="dateDeces">Date de décès</label></td>
+            <td><input type="text" id="dateDeces" name="dateDeces"></td>
+        </tr>
+        <tr>
+            <td><label for="profession">Profession</label></td>
+            <td><input type="text" id="profession" name="profession"></td>
+        </tr>
+        <tr>
+            <td><label for="employeur">Employeur</label></td>
+            <td><input type="text" id="employeur" name="employeur"></td>
+        </tr>
+        <tr>
+            <td><label for="lieuEtudes">Lieu d'études</label></td>
+            <td><input type="text" id="lieuEtudes" name="lieuEtudes"></td>
+        </tr>
+        <tr>
+            <td><label for="nbreEnfants">Nombre d'enfants</label></td>
+            <td><input type="number" id="nbreEnfants" name="nbreEnfants"></td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Envoyer">
+</form>
+</body>
+</html>
